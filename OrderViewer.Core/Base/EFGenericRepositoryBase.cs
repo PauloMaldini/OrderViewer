@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Linq.Dynamic.Core;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using OrderViewer.Core.Concrete;
 using OrderViewer.Core.Interface;
 
-namespace OrderViewer.Core.Concrete
+namespace OrderViewer.Core.Base
 {
-    public class EFGenericRepository<TEntity, TFilter, TKey> 
+    public abstract class EFGenericRepositoryBase<TEntity, TFilter, TKey> 
          : IRepository<TEntity, TFilter, TKey>
             where TEntity : class, IEntity<TKey> 
             where TFilter : IFilter
@@ -18,7 +19,7 @@ namespace OrderViewer.Core.Concrete
         protected DbContext DbContext { get; }
         protected IQueryable<TEntity> BaseQuery => GetBaseQuery();
 
-        protected EFGenericRepository(DbContext context)
+        protected EFGenericRepositoryBase(DbContext context)
         {
             DbContext = context;
             DbSet = DbContext.Set<TEntity>();

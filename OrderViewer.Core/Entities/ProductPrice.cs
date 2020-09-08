@@ -19,14 +19,14 @@ namespace OrderViewer.Core.Entities
     
     public class ProductPriceFilter : FilterBase
     {
-        
+            
     }
 
-    public class ProductPriceRepository : EFGenericRepository<ProductPrice, ProductPriceFilter, long>
+    public class ProductPriceRepositoryBase : EFGenericRepositoryBase<ProductPrice, ProductPriceFilter, long>
     {
-        public ProductPriceRepository(OrderViewerContext context) : base(context)
+        public ProductPriceRepositoryBase(OrderViewerContext context) : base(context)
         {
-                                
+                                    
         }
     }
 }

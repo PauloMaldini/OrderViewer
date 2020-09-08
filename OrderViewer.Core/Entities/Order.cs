@@ -18,9 +18,9 @@ namespace OrderViewer.Core.Entities
         
     }
 
-    public class OrderRepository : EFGenericRepository<Order, OrderFilter, long>
+    public class OrderRepositoryBase : EFGenericRepositoryBase<Order, OrderFilter, long>
     {
-        public OrderRepository(OrderViewerContext context) : base(context)
+        public OrderRepositoryBase(OrderViewerContext context) : base(context)
         {
             
         }
