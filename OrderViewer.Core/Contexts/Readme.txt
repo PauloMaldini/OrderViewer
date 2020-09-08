@@ -1,1 +1,1 @@
-dotnet ef migrations add <name> --output-dir Migrations 
+dotnet ef migrations add <name> --project OrderViewer.Core --output-dir Migrations 
