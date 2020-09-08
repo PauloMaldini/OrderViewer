@@ -1,14 +1,14 @@
-using System;
 using Microsoft.EntityFrameworkCore;
 using OrderViewer.Core.Entities;
 
-namespace OrderViewer.Core.Context
+namespace OrderViewer.Core.Contexts
 {
     public class OrderViewerContext : DbContext
     {
         public OrderViewerContext (DbContextOptions<OrderViewerContext> options)
             : base(options)
         {
+            
         }
         
         public DbSet<Order> Orders { get; set; }
@@ -18,8 +18,7 @@ namespace OrderViewer.Core.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
-            
+
         }
     }
 }

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using OrderViewer.Core.Context;
+using OrderViewer.Core.Contexts;
 
 namespace OrderViewer.Core.Factories
 {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using OrderViewer.Core.Interface;
+using OrderViewer.Core.Interfaces;
 
 namespace OrderViewer.Core.Base
 {

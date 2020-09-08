@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OrderViewer.Core.Concrete;
-using OrderViewer.Core.Interface;
+using OrderViewer.Core.Interfaces;
 
 namespace OrderViewer.Core.Base
 {

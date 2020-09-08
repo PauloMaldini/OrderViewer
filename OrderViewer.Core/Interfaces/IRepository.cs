@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using OrderViewer.Core.Concrete;
 
-namespace OrderViewer.Core.Interface
+namespace OrderViewer.Core.Interfaces
 {
     public interface IEditable
     {

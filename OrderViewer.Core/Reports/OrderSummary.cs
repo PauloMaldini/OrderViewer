@@ -1,6 +1,6 @@
 using System.Linq;
 using OrderViewer.Core.Base;
-using OrderViewer.Core.Context;
+using OrderViewer.Core.Contexts;
 
 namespace OrderViewer.Core.Reports
 {
@@ -14,9 +14,9 @@ namespace OrderViewer.Core.Reports
         
     }
 
-    public class OrderSummaryReport : EFReportBase<OrderSummary, OrderSummaryFilter>
+    public class OrderSummaryReport : OrderViewerReportBase
     {
-        public OrderSummaryReport(OrderViewerContext context) 
+        public OrderSummaryReport(OrderViewerContext context) : base(context)
         {
             
         }

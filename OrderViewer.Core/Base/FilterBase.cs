@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using OrderViewer.Core.Interface;
+using OrderViewer.Core.Interfaces;
 
 namespace OrderViewer.Core.Base
 {

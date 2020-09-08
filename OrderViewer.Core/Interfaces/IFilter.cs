@@ -1,4 +1,4 @@
-﻿namespace OrderViewer.Core.Interface
+﻿namespace OrderViewer.Core.Interfaces
 {
     public interface IPagination
     {
