@@ -1,27 +1,26 @@
 using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace OrderViewer.API.Base
 {
     public abstract class ApiControllerBase : ControllerBase
     {
-        private readonly string _allowedMethods;
-
-        protected ApiControllerBase(string allowedMethods = "GET,POST")
+        protected readonly IMapper Mapper;  
+        
+        protected ApiControllerBase(IMapper mapper)
         {
-            _allowedMethods = allowedMethods;
-            if (!_allowedMethods.Split(',').Contains("OPTIONS"))
-            {
-                _allowedMethods = $"{_allowedMethods},OPTIONS";
-            }
+            Mapper = mapper;
         }
         
-        [ProducesResponseType(typeof(void), 200)]
-        [HttpOptions]
-        public ActionResult Options()
+        public override ActionResult ValidationProblem(
+            /*[ActionResultObjectValue]*/ ModelStateDictionary modelStateDictionary)
         {
-            Response.Headers["Allow"] = _allowedMethods;
-            return Ok();
+            var options = HttpContext.RequestServices.GetRequiredService<IOptions<ApiBehaviorOptions>>();
+            return (ActionResult)options.Value.InvalidModelStateResponseFactory(ControllerContext);
         }
     }
 }

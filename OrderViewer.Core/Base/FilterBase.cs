@@ -5,6 +5,8 @@ namespace OrderViewer.Core.Base
 {
     public abstract class FilterBase : IFilter
     {
+        public long? Id { get; set; }
+        
         [Range(0, long.MaxValue)]
         public long? PageIndex { get; set; }
 
