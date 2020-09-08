@@ -1,11 +1,10 @@
+using System;
+using OrderViewer.API.Models.OrderItem.Base;
+
 namespace OrderViewer.API.Models.OrderItem
 {
-    public class OrderItemForCreatingDto
+    public class OrderItemForCreatingDto : OrderItemDtoBase
     {
         public long OrderId { get; set; }
-        
-        public long ProductId { get; set; }
-        
-        public int Quantity { get; set; }
     }
 }

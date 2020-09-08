@@ -10,7 +10,7 @@ namespace OrderViewer.Core.Contexts
         public OrderViewerContext (DbContextOptions<OrderViewerContext> options)
             : base(options)
         {
-            
+                
         }
         
         public DbSet<Order> Orders { get; set; }

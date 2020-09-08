@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using OrderViewer.API.Swagger.Filters;
 
 namespace OrderViewer.API
 {
@@ -26,6 +31,19 @@ namespace OrderViewer.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            services.AddSwaggerGen(x =>
+            {
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "ACADEMIA API", Version = "v1" });
+
+                var xmlDocFileName = Path.Combine(AppContext.BaseDirectory, 
+                    $"{Assembly.GetExecutingAssembly().GetName().Name}.xml");
+                x.IncludeXmlComments(xmlDocFileName);
+
+                x.OperationFilter<ResponseHeaderOperationFilter>();
+            });
+                
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

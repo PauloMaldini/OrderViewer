@@ -2,7 +2,7 @@ using System;
 
 namespace OrderViewer.API.Models.Product.Base
 {
-    public class ProductDtoBase
+    public abstract class ProductDtoBase
     {
         public string Name { get; set; }
         

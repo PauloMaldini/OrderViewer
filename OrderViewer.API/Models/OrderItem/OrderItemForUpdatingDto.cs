@@ -1,11 +1,9 @@
+using OrderViewer.API.Models.OrderItem.Base;
+
 namespace OrderViewer.API.Models.OrderItem
 {
-    public class OrderItemForUpdatingDto
+    public class OrderItemForUpdatingDto : OrderItemDtoBase
     {
-        public long OrderItemId { get; set; }
-        
-        public long ProductId { get; set; }
-        
-        public int Quantity { get; set; }
+        public long Id { get; set; }
     }
 }
