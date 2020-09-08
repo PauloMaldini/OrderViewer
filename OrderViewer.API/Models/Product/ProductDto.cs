@@ -5,6 +5,6 @@ namespace OrderViewer.API.Models.Product
 {
     public class ProductDto : ProductDtoBase
     {
-        
+        public long Id { get; set; }
     }
 }
