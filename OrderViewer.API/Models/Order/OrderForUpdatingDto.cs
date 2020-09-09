@@ -4,6 +4,6 @@ namespace OrderViewer.API.Models.Order
 {
     public class OrderForUpdatingDto
     {
-        public OrderState OrderState { get; set; }
+        public OrderStatus OrderStatus { get; set; }
     }
 }

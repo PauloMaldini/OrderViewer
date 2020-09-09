@@ -7,7 +7,7 @@ namespace OrderViewer.API.Models.Order
     {
         public long Id { get; set; }
         
-        public OrderState OrderState { get; set; }
+        public OrderStatus OrderStatus { get; set; }
         
         public DateTime Timestamp { get; set; }
     }

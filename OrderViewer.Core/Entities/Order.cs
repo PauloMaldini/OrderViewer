@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using OrderViewer.Core.Base;
 using OrderViewer.Core.Concrete;
 using OrderViewer.Core.Contexts;
@@ -8,9 +9,11 @@ namespace OrderViewer.Core.Entities
 {
     public class Order : EntityBase<long>
     {
-        public OrderState OrderState { get; set; }
+        public OrderStatus OrderStatus { get; set; }
         
         public DateTime Timestamp { get; set; }
+        
+        public List<OrderItem> OrderItems { get; set; }
     }
 
     public class OrderFilter : FilterBase
@@ -18,9 +21,9 @@ namespace OrderViewer.Core.Entities
         
     }
 
-    public class OrderRepositoryBase : EFGenericRepositoryBase<Order, OrderFilter, long>
+    public class OrderRepository : EFGenericRepositoryBase<Order, OrderFilter, long>
     {
-        public OrderRepositoryBase(OrderViewerContext context) : base(context)
+        public OrderRepository(OrderViewerContext context) : base(context)
         {
             
         }

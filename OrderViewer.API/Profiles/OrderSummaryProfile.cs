@@ -8,8 +8,13 @@ namespace OrderViewer.API.Profiles
     {
         public OrderSummaryProfile()
         {
+            CreateMap<OrderSummaryItem, OrderSummaryItemDto>();
             CreateMap<OrderSummary, OrderSummaryDto>();
-            CreateMap<OrderSummaryFilter, OrderSummary>();
+            CreateMap<OrderSummaryFilterDto, OrderSummaryFilter>()
+                .ForMember(x => x.Id,
+                    y => y.MapFrom(
+                        z => z.OrderId));
+
         }
     }
 }

@@ -16,7 +16,9 @@ namespace OrderViewer.API.Profiles
                 .ForMember(x => x.Price,
                     y => y.MapFrom(
                         z => z.Product.Price));
-            
+                
+
+            CreateMap<OrderItemFilterDto, OrderItemFilter>();
             CreateMap<OrderItemDtoBase, OrderItem>()
                 .Include<OrderItemForUpdatingDto, OrderItem>()
                 .Include<OrderItemForCreatingDto, OrderItem>()

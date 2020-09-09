@@ -41,7 +41,7 @@ namespace OrderViewer.API.Base
             return CreatedAtRoute("ReadEntity", new { id = GetEntityId(entity) }, entity);
         }
 
-        [HttpGet("{id}", Name = "ReadEntity")]
+        [HttpGet("{id}")]
         public virtual async Task<ActionResult<TEntityDto>> Read(TKey id)
         {
             var result = await Repository.ReadAsync(id);

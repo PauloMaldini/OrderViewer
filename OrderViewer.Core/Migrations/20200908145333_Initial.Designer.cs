@@ -9,7 +9,7 @@ using OrderViewer.Core.Contexts;
 namespace OrderViewer.Core.Migrations
 {
     [DbContext(typeof(OrderViewerContext))]
-    [Migration("20200908112656_Initial")]
+    [Migration("20200908145333_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,7 +30,7 @@ namespace OrderViewer.Core.Migrations
                     b.Property<bool>("Deleted")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("OrderState")
+                    b.Property<int>("OrderStatus")
                         .HasColumnType("INTEGER");
 
                     b.Property<byte[]>("RowVersion")
@@ -49,35 +49,35 @@ namespace OrderViewer.Core.Migrations
                         {
                             Id = 1L,
                             Deleted = false,
-                            OrderState = 2,
+                            OrderStatus = 2,
                             Timestamp = new DateTime(2020, 3, 15, 10, 34, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2L,
                             Deleted = false,
-                            OrderState = 2,
+                            OrderStatus = 2,
                             Timestamp = new DateTime(2020, 6, 24, 20, 1, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3L,
                             Deleted = false,
-                            OrderState = 2,
+                            OrderStatus = 2,
                             Timestamp = new DateTime(2020, 8, 27, 14, 59, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4L,
                             Deleted = false,
-                            OrderState = 1,
+                            OrderStatus = 1,
                             Timestamp = new DateTime(2020, 9, 7, 11, 14, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5L,
                             Deleted = false,
-                            OrderState = 1,
+                            OrderStatus = 1,
                             Timestamp = new DateTime(2020, 9, 8, 21, 33, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -306,6 +306,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 1L,
+                            Code = "1",
                             Deleted = false,
                             Description = "",
                             Name = "Laptop",
@@ -314,6 +315,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 2L,
+                            Code = "2",
                             Deleted = false,
                             Description = "",
                             Name = "Web camera",
@@ -322,6 +324,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 3L,
+                            Code = "3",
                             Deleted = false,
                             Description = "",
                             Name = "Router",
@@ -330,6 +333,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 4L,
+                            Code = "4",
                             Deleted = false,
                             Description = "",
                             Name = "Commutator",
@@ -338,6 +342,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 5L,
+                            Code = "5",
                             Deleted = false,
                             Description = "",
                             Name = "Printer",
@@ -346,6 +351,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 6L,
+                            Code = "6",
                             Deleted = false,
                             Description = "",
                             Name = "Display",
@@ -354,6 +360,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 7L,
+                            Code = "7",
                             Deleted = false,
                             Description = "",
                             Name = "Phone",
@@ -362,6 +369,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 8L,
+                            Code = "8",
                             Deleted = false,
                             Description = "",
                             Name = "Headphones",
@@ -370,6 +378,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 9L,
+                            Code = "9",
                             Deleted = false,
                             Description = "",
                             Name = "SSD",
@@ -378,6 +387,7 @@ namespace OrderViewer.Core.Migrations
                         new
                         {
                             Id = 10L,
+                            Code = "10",
                             Deleted = false,
                             Description = "",
                             Name = "RAM",
@@ -388,7 +398,7 @@ namespace OrderViewer.Core.Migrations
             modelBuilder.Entity("OrderViewer.Core.Entities.OrderItem", b =>
                 {
                     b.HasOne("OrderViewer.Core.Entities.Order", "Order")
-                        .WithMany()
+                        .WithMany("OrderItems")
                         .HasForeignKey("OrderRefId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
