@@ -28,6 +28,13 @@
       <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="ClientApp\src\app\core" />
+      <Folder Include="ClientApp\src\app\layout" />
+      <Folder Include="ClientApp\src\app\pages" />
+      <Folder Include="ClientApp\src\app\pages\order\components" />
+    </ItemGroup>
+
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
         <!-- Ensure Node.js is installed -->
         <Exec Command="node --version" ContinueOnError="true">
