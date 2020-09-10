@@ -7,7 +7,7 @@ const routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'order', pathMatch: 'full' },
+      { path: '', loadChildren: '../pages/order/order.module#OrderModule' },
     ]
   }
 ];

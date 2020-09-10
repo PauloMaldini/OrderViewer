@@ -1,0 +1,7 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 60px);
+  padding: 30px;
+}
+

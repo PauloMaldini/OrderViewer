@@ -1,0 +1,43 @@
+:host {
+  border: 3px solid;
+  flex: 1 1 auto;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+#items tr {
+  border-bottom: 3px solid;
+}
+
+#items th {
+  padding: 10px;
+  text-align: left;
+}
+
+#items td {
+  padding: 20px;
+  text-align: left;
+}
+
+#footer {
+  margin-top: 10px;
+}
+
+#footer tr {
+  border-top: 3px solid;
+}
+
+#footer td {
+  padding: 10px;
+  text-align: left;
+}
+
+
+
+

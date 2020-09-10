@@ -1,10 +1,8 @@
 :host {
-  height: 100px;
-  padding: 10px;
-  border-top: 3px solid;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 10px 20px 10px;
 }
 
 .status {
@@ -21,9 +19,12 @@
   background: red;
 }
 
-.order-status {
+.order {
   display: flex;
+  flex-direction: row;
   align-items: center;
 }
+
+
 
 

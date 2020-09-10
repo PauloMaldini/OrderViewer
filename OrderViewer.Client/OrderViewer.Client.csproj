@@ -32,6 +32,7 @@
       <Folder Include="ClientApp\src\app\core" />
       <Folder Include="ClientApp\src\app\pages" />
       <Folder Include="ClientApp\src\app\pages\order\components" />
+      <Folder Include="ClientApp\src\app\shared" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

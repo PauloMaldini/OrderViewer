@@ -9,10 +9,11 @@ import { SummaryHeadingComponent } from './components/summary/components/summary
 import { SummaryItemsComponent } from './components/summary/components/summary-items/summary-items.component';
 import { NavListComponent } from './components/navigation/components/nav-list/nav-list.component';
 import { NavFooterComponent } from './components/navigation/components/nav-footer/nav-footer.component';
+import { NavListItemComponent } from './components/navigation/components/nav-list/components/nav-list-item/nav-list-item.component';
 
 
 @NgModule({
-  declarations: [OrderComponent, NavigationComponent, SummaryComponent, SummaryHeadingComponent, SummaryItemsComponent, NavListComponent, NavFooterComponent],
+  declarations: [OrderComponent, NavigationComponent, SummaryComponent, SummaryHeadingComponent, SummaryItemsComponent, NavListComponent, NavFooterComponent, NavListItemComponent],
   imports: [
     CommonModule,
     OrderRoutingModule
