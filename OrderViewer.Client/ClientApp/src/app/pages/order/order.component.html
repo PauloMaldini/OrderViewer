@@ -1,3 +1,2 @@
-<app-navigation></app-navigation>
-<app-summary></app-summary>
-
+<app-navigation (selected)="onSelectOrder($event)" [orders]="orders"></app-navigation>
+<app-summary [orderSummary]="orderSummary"></app-summary>

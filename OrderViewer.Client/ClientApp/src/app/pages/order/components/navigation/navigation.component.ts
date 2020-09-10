@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {OrderDto} from "../../../../shared/generated";
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  @Input() orders : OrderDto[];
+  @Output() selected = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onItemClick(orderId: number) {
+    this.selected.emit(orderId);
+  }
 }

@@ -1,6 +1,7 @@
 <div class="order">
-  <div class="status status-completed">
+  <div class="status" [ngClass]="[order.orderStatus === 1 ? 'status-inprogress' : 'status-completed',
+    isActive ? 'selected' : '']" (click)="onClick()">
   </div>
-  <span>Order #1</span>
+  <span>Order #{{order.id}}</span>
 </div>
-<span>10.01.2021 05:30</span>
+<span>{{order.timestamp}}</span>

@@ -17,7 +17,7 @@ namespace OrderViewer.Core.Reports
         
         public OrderStatus Status { get; set; }
         
-        public string StateName { get; set; }
+        public string StatusName { get; set; }
         
         public decimal TotalPrice { get; set; }
         

@@ -1,5 +1,7 @@
-<app-nav-list-item></app-nav-list-item>
-<app-nav-list-item></app-nav-list-item>
-<app-nav-list-item></app-nav-list-item>
-<app-nav-list-item></app-nav-list-item>
-<app-nav-list-item></app-nav-list-item>
+<app-nav-list-item *ngFor="let order of orders; let i = index"
+                   [index]="i"
+                   [order]="order"
+                   (selected)="onItemClick($event)">
+
+</app-nav-list-item>
+

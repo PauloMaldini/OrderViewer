@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {OrderSummaryItemDto} from "../../../../../../shared/generated";
 
 @Component({
   selector: 'app-summary-items',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryItemsComponent implements OnInit {
 
+  @Input() orderSummaryItems: {
+    totalQty: number,
+    totalProductPrice: number,
+    totalPrice: number,
+    items: OrderSummaryItemDto[]
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }

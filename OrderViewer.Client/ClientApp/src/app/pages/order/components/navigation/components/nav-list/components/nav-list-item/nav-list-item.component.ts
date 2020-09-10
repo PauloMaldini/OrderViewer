@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
+import {OrderDto, OrderStatus} from "../../../../../../../../shared/generated";
 
 @Component({
   selector: 'app-nav-list-item',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavListItemComponent implements OnInit {
 
-
+  @Input() order: OrderDto;
+  @Input() isActive: boolean;
+  @Input() index: number;
+  @Output() selected = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClick() {
+    this.selected.emit(this.index);
+  }
 }
