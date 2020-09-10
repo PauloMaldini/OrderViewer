@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from "./app-routing.module";
+import {CoreModule} from "./core/core.module.";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {AppRoutingModule} from "./app-routing.module";
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

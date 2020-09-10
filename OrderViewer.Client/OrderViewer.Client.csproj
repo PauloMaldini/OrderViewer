@@ -29,7 +29,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="ClientApp\src\app\core" />
       <Folder Include="ClientApp\src\app\pages" />
       <Folder Include="ClientApp\src\app\pages\order\components" />
     </ItemGroup>

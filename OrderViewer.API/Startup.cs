@@ -68,6 +68,14 @@ namespace OrderViewer.API
             });
                 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
+            services.AddCors(o => o.AddPolicy("Policy", builder =>
+            {
+                builder.SetIsOriginAllowed((host) => true)
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -91,6 +99,8 @@ namespace OrderViewer.API
             app.UseRouting();
 
             app.UseAuthorization();
+            
+            app.UseCors("Policy");
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
