@@ -25,13 +25,13 @@ namespace OrderViewer.Core.Contexts
             
             #region [ Products ]
             modelBuilder.Entity<Product>().HasData(new Product { Id = 1, Name = "Laptop", Description = "", Price = 1300, Code = "1" });
-            modelBuilder.Entity<Product>().HasData(new Product { Id = 2, Name = "Web camera", Description = "", Price = 53.23m, Code = "2" });
+            modelBuilder.Entity<Product>().HasData(new Product { Id = 2, Name = "Web camera", Description = "", Price = 53, Code = "2" });
             modelBuilder.Entity<Product>().HasData(new Product { Id = 3, Name = "Router", Description = "", Price = 120, Code = "3" });
             modelBuilder.Entity<Product>().HasData(new Product { Id = 4, Name = "Commutator", Description = "", Price = 5500, Code = "4" });
             modelBuilder.Entity<Product>().HasData(new Product { Id = 5, Name = "Printer", Description = "", Price = 217, Code = "5" });
             modelBuilder.Entity<Product>().HasData(new Product { Id = 6, Name = "Display", Description = "", Price = 528, Code = "6" });
             modelBuilder.Entity<Product>().HasData(new Product { Id = 7, Name = "Phone", Description = "", Price = 790, Code = "7" });
-            modelBuilder.Entity<Product>().HasData(new Product { Id = 8, Name = "Headphones", Description = "", Price = 34.77m, Code = "8" });
+            modelBuilder.Entity<Product>().HasData(new Product { Id = 8, Name = "Headphones", Description = "", Price = 34, Code = "8" });
             modelBuilder.Entity<Product>().HasData(new Product { Id = 9, Name = "SSD", Description = "", Price = 115, Code = "9" });
             modelBuilder.Entity<Product>().HasData(new Product { Id = 10, Name = "RAM", Description = "", Price = 91, Code = "10" });
             #endregion

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output} from '@angular/core';
 import {OrderDto, OrderStatus} from "../../../../../../../../shared/generated";
 
 @Component({
@@ -13,12 +13,16 @@ export class NavListItemComponent implements OnInit {
   @Input() index: number;
   @Output() selected = new EventEmitter<number>();
 
+  // @HostBinding('style.background-color')
+  // backgroundColor = 'white';
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
-  onClick() {
+  @HostListener("click") onClick() {
     this.selected.emit(this.index);
   }
 }

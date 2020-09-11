@@ -1,5 +1,6 @@
 using AutoMapper;
 using OrderViewer.API.Models.OrderSummary;
+using OrderViewer.Core.Concrete;
 using OrderViewer.Core.Reports;
 
 namespace OrderViewer.API.Profiles
@@ -15,6 +16,7 @@ namespace OrderViewer.API.Profiles
                     y => y.MapFrom(
                         z => z.OrderId));
 
+            CreateMap<Selection<OrderSummary>, Selection<OrderSummaryDto>>();
         }
     }
 }

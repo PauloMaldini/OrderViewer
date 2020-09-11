@@ -11,7 +11,7 @@ export class NavListComponent implements OnInit {
   @Input() orders : OrderDto[];
   @Output() selected = new EventEmitter<number>();
 
-  activeIndex: number;
+  activeIndex: number = 0;
 
   constructor() { }
 

@@ -8,12 +8,10 @@ import {OrderStatus} from "../../../../../../shared/generated";
 })
 export class SummaryHeadingComponent implements OnInit {
 
-  @Input() orderSummaryHeading: {
-    number?: string | undefined,
-    date?: Date,
-    status?: OrderStatus,
-    stateName?: string | undefined
-  }
+  @Input() number: string;
+  @Input() date?: Date;
+  @Input() status: OrderStatus;
+  @Input() total: number;
 
   constructor() { }
 

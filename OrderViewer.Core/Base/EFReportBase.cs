@@ -17,7 +17,7 @@ namespace OrderViewer.Core.Base
             throw new NotImplementedException();
         }
 
-        public async Task<Selection<TEntity>> ReadAsync(TFilter filter)
+        public virtual async Task<Selection<TEntity>> ReadAsync(TFilter filter)
         {
             Query = InitQuery(filter);
 

@@ -25,7 +25,7 @@ namespace OrderViewer.API.Base
             Response.Headers["Total-Count"] = selection.TotalCount.ToString();
             Response.Headers["Filtered-Count"] = selection.FilteredCount.ToString();
             
-            return Ok(Mapper.Map<List<TEntityDto>>(selection.Items));
+            return Ok(Mapper.Map<Selection<TEntityDto>>(selection));
         }
     }
 }

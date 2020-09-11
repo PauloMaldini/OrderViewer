@@ -8,12 +8,10 @@ import {OrderSummaryItemDto} from "../../../../../../shared/generated";
 })
 export class SummaryItemsComponent implements OnInit {
 
-  @Input() orderSummaryItems: {
-    totalQty: number,
-    totalProductPrice: number,
-    totalPrice: number,
-    items: OrderSummaryItemDto[]
-  }
+  @Input() totalQty: number;
+  @Input() totalProductPrice: number;
+  @Input() totalPrice: number
+  @Input() orderSummaryItems: OrderSummaryItemDto[];
 
   constructor() { }
 

@@ -36,7 +36,7 @@ namespace OrderViewer.Core.Migrations
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     Code = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(nullable: false)
+                    Price = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -101,52 +101,52 @@ namespace OrderViewer.Core.Migrations
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 1L, null, "1", false, "", "Laptop", 1300m, null });
+                values: new object[] { 1L, null, "1", false, "", "Laptop", 1300.0, null });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 2L, null, "2", false, "", "Web camera", 53.23m, null });
+                values: new object[] { 2L, null, "2", false, "", "Web camera", 53.0, null });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 3L, null, "3", false, "", "Router", 120m, null });
+                values: new object[] { 3L, null, "3", false, "", "Router", 120.0, null });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 4L, null, "4", false, "", "Commutator", 5500m, null });
+                values: new object[] { 4L, null, "4", false, "", "Commutator", 5500.0, null });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 5L, null, "5", false, "", "Printer", 217m, null });
+                values: new object[] { 5L, null, "5", false, "", "Printer", 217.0, null });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 6L, null, "6", false, "", "Display", 528m, null });
+                values: new object[] { 6L, null, "6", false, "", "Display", 528.0, null });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 7L, null, "7", false, "", "Phone", 790m, null });
+                values: new object[] { 7L, null, "7", false, "", "Phone", 790.0, null });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 8L, null, "8", false, "", "Headphones", 34.77m, null });
+                values: new object[] { 8L, null, "8", false, "", "Headphones", 34.0, null });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 9L, null, "9", false, "", "SSD", 115m, null });
+                values: new object[] { 9L, null, "9", false, "", "SSD", 115.0, null });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Author", "Code", "Deleted", "Description", "Name", "Price", "RowVersion" },
-                values: new object[] { 10L, null, "10", false, "", "RAM", 91m, null });
+                values: new object[] { 10L, null, "10", false, "", "RAM", 91.0, null });
 
             migrationBuilder.InsertData(
                 table: "OrderItems",

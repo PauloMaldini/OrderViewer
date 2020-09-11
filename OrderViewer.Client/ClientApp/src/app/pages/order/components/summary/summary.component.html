@@ -1,3 +1,10 @@
-<app-summary-heading></app-summary-heading>
-<app-summary-items></app-summary-items>
+<app-summary-heading [number]="orderSummary.number"
+                     [date]="orderSummary.date"
+                     [status]="orderSummary.status"
+                     [total]="orderSummary.totalPrice"></app-summary-heading>
+
+<app-summary-items [totalPrice]="orderSummary.totalPrice"
+                   [totalQty]="orderSummary.totalQuantity"
+                   [totalProductPrice]="orderSummary.totalProductPrice"
+                   [orderSummaryItems]="orderSummary.items"></app-summary-items>
 

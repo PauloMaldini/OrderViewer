@@ -289,8 +289,8 @@ namespace OrderViewer.Core.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Price")
+                        .HasColumnType("REAL");
 
                     b.Property<byte[]>("RowVersion")
                         .IsConcurrencyToken()
@@ -308,7 +308,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "Laptop",
-                            Price = 1300m
+                            Price = 1300.0
                         },
                         new
                         {
@@ -317,7 +317,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "Web camera",
-                            Price = 53.23m
+                            Price = 53.0
                         },
                         new
                         {
@@ -326,7 +326,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "Router",
-                            Price = 120m
+                            Price = 120.0
                         },
                         new
                         {
@@ -335,7 +335,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "Commutator",
-                            Price = 5500m
+                            Price = 5500.0
                         },
                         new
                         {
@@ -344,7 +344,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "Printer",
-                            Price = 217m
+                            Price = 217.0
                         },
                         new
                         {
@@ -353,7 +353,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "Display",
-                            Price = 528m
+                            Price = 528.0
                         },
                         new
                         {
@@ -362,7 +362,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "Phone",
-                            Price = 790m
+                            Price = 790.0
                         },
                         new
                         {
@@ -371,7 +371,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "Headphones",
-                            Price = 34.77m
+                            Price = 34.0
                         },
                         new
                         {
@@ -380,7 +380,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "SSD",
-                            Price = 115m
+                            Price = 115.0
                         },
                         new
                         {
@@ -389,7 +389,7 @@ namespace OrderViewer.Core.Migrations
                             Deleted = false,
                             Description = "",
                             Name = "RAM",
-                            Price = 91m
+                            Price = 91.0
                         });
                 });
 
@@ -402,7 +402,7 @@ namespace OrderViewer.Core.Migrations
                         .IsRequired();
 
                     b.HasOne("OrderViewer.Core.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("OrderItems")
                         .HasForeignKey("ProductRefId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

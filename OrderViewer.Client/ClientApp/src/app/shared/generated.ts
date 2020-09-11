@@ -1273,6 +1273,7 @@ export class OrderSummaryItemDto implements IOrderSummaryItemDto {
   quantity?: number;
   price?: number;
   totalPrice?: number;
+  number?: number;
 
   constructor(data?: IOrderSummaryItemDto) {
     if (data) {
@@ -1289,6 +1290,7 @@ export class OrderSummaryItemDto implements IOrderSummaryItemDto {
       this.quantity = _data["quantity"];
       this.price = _data["price"];
       this.totalPrice = _data["totalPrice"];
+      this.number = _data["number"];
     }
   }
 
@@ -1305,6 +1307,7 @@ export class OrderSummaryItemDto implements IOrderSummaryItemDto {
     data["quantity"] = this.quantity;
     data["price"] = this.price;
     data["totalPrice"] = this.totalPrice;
+    data["number"] = this.number;
     return data;
   }
 }
@@ -1314,6 +1317,7 @@ export interface IOrderSummaryItemDto {
   quantity?: number;
   price?: number;
   totalPrice?: number;
+  number?: number;
 }
 
 export class OrderSummaryDto implements IOrderSummaryDto {

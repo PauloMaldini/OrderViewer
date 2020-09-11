@@ -13,6 +13,8 @@ namespace OrderViewer.API.Models.OrderSummary
         public decimal Price { get; set; }
         
         public decimal TotalPrice { get; set; } 
+        
+        public long Number { get; set; }
     }
     
     public class OrderSummaryDto

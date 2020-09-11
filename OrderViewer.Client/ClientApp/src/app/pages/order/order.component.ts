@@ -15,13 +15,21 @@ export class OrderComponent implements OnInit {
   constructor(@Inject(clientServiceToken) private client : IClient) { }
 
   ngOnInit() {
-    console.log(this.client);
     this.client.ordersAll(null, null, null, null)
-      .then((x) => this.orders = x);
+      .then((x) => {
+        this.orders = x;
+        if (x.length > 0) {
+          this.onSelectOrder(x[0].id);
+        }
+      });
   }
 
   onSelectOrder(orderId : number) {
-    //Refresh orderSummary
+    this.client.orderSummary(orderId)
+      .then((x) => {
+        console.log(x);
+        this.orderSummary = x.items[0];
 
+      });
   }
 }

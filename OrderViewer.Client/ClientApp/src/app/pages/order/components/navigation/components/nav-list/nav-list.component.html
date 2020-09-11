@@ -1,6 +1,7 @@
 <app-nav-list-item *ngFor="let order of orders; let i = index"
                    [index]="i"
                    [order]="order"
+                   [isActive]="i == activeIndex"
                    (selected)="onItemClick($event)">
 
 </app-nav-list-item>
